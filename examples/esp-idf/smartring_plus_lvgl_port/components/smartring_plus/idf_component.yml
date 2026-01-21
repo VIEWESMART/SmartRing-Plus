@@ -1,0 +1,15 @@
+targets:
+  - esp32s3
+
+tags:
+  - bsp
+
+dependencies:
+  idf: ">=5.1"
+  esp_lcd_touch_cst816s: "*"
+  esp_lcd_st77916: "^0.0.2"
+  lvgl/lvgl: "^8"
+
+  espressif/esp_lvgl_port:
+    version: "*"
+    public: true
