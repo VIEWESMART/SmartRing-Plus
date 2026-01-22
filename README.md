@@ -13,7 +13,7 @@
 
 </div>
 
-<img width="1158" height="694" alt="SmartRing Plus Product Image 1" src="images/emoji.png" />
+![SmartRing Plus Product Image](images/emoji.png)
 
 ## 1. Introduction
 The SmartRing-Plus-SmartDisplay is a compact high-performance smart display module designed by VIEWE, featuring a 1.85-inch circular IPS touch screen. Built around the ESP32-S3-N16R8 dual-core MCU, it integrates Wi-Fi and Bluetooth BLE5.0 wireless connectivity, supporting a wealth of practical functions and flexible secondary development. With its exquisite CNC-machined casing, rich peripheral interfaces, and low-power design, it is suitable for a variety of embedded application scenarios requiring human-machine interaction, multimedia playback, and IoT connectivity.
