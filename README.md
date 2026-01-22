@@ -80,16 +80,15 @@ The SmartRing-Plus-SmartDisplay is a compact high-performance smart display modu
 ### 1.2 Applications
 With its compact size, rich functions, and wireless connectivity, the SmartRing-Plus is ideal for IoT devices and embedded systems in the following fields:
 
-• Desktop smart assistant (computer secondary screen)
-• Personal multimedia player (music/photo/video)
-• Smart wearable accessory
-• Home smart control panel
-• IoT sensor data display terminal
-• Portable entertainment device (built-in game)
-• Customized themed clock/weather station
-• Embedded HMI (Human-Machine Interface)
-• Educational electronics
-• Creative DIY projects
+- Desktop smart assistant (computer secondary screen)
+- Personal multimedia player (music/photo/video)
+- Home smart control panel
+- IoT sensor data display terminal
+- Portable entertainment device (built-in game)
+- Customized themed clock/weather station
+- Embedded HMI (Human-Machine Interface)
+- Educational electronics
+- Creative DIY projects
 
 ## 2. Hardware Description
 ### 2.1 Module Introduction
