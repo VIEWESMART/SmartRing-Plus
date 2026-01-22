@@ -175,36 +175,140 @@ The SmartRing-Plus series includes two versions with consistent hardware specifi
 2. Firmware suffix: _A for version A, _B for version B
 3. Sample code: Version-specific codes provided for secondary development
 
+## 3. Software
 
-## 3. Instructions for Use
-This tutorial guides users to set up the software development environment for SmartRing-Plus and demonstrates basic operations such as project configuration, compilation, and firmware burning through simple examples.
+We provide comprehensive support for **Arduino**, **PlatformIO**, and **ESP-IDF** frameworks, with pre-ported **LVGL** examples.
 
-### Preparation
-- Hardware
-  - SmartRing-Plus Development Board (Version A/B)
-  - USB data cable (for power supply, burning, debugging)
-  - Wireless power bank (optional, QI-compliant)
-  - Computer (Windows, Linux, or macOS)
+### 3.1 Software Examples
+Examples are available in the [GitHub Repository](examples).
 
-- Software (Choose any development environment below)
-  - VSCode + ESP-IDF plugin (recommended)
-  - Arduino IDE
-  - ESP-IDF
-  - PlatformIO
+| Framework | Example Path | Description |
+| :--- | :--- | :--- |
+| **Arduino** | `examples/arduino/gui/lvgl_v8` | **LVGL Benchmark**: Demonstrates 800x480 UI rendering. It can also be directly opened in the Arduino IDE. |
+| **esp-idf** | `examples/esp_idf/lvgl_port` | **lvgl port**: Example of porting and using lvgl in esp-idf |
+| **esp-idf** | `examples/esp_idf/sd_card_spi` | **sd_card**: Examples of using an SD card on a device |
+| **PlatformIO**| `examples/platformio/lvgl_v8_port` | **lvgl v8 port**: Usage example of lvgl v8. |
 
-## 4. Getting Started
-### ESP-IDF
-- Please refer to [ESP-IDF Quick Start](https://github.com/VIEWESMART/VIEWE-Tutorial/blob/main/esp-idf/esp-idf_Beginner_Tutorial.md) to set up the development environment and burn firmware.
-- Application examples are stored in the [examples/esp-idf](https://github.com/VIEWESMART/SmartRing-Plus/tree/main/examples/esp-idf) directory. Run `idf.py menuconfig` to configure project options. Examples are being continuously updated; contact us for priority support if needed.
+### 3.2 Getting Started
 
-### Arduino IDE
-- Install the ESP32 board support package in Arduino IDE.
-- Download the SmartRing-Plus Arduino library and sample code from the GitHub repository.
-- Follow the library documentation to quickly implement functions such as screen display and sensor reading.
+#### 3.2.1 Preparation
+* **Hardware**: SmartRing-Plus Development Board (Version A/B), USB-C Cable.
+* **Software**: VS Code (ESP-IDF v5.3+) or Arduino IDE (v2.0+) or VS Code (PlatformIO).
+* **Library**: The following libraries are needed for Arduino IDE and PlatformIO
 
-### MicroPython / PlatformIO
-- MicroPython firmware and sample scripts are available in the [examples/micropython](https://github.com/VIEWESMART/SmartRing-Plus/tree/main/examples/micropython) directory.
-- PlatformIO project templates are provided in [examples/platformio](https://github.com/VIEWESMART/SmartRing-Plus/tree/main/examples/platformio), supporting one-click compilation and burning.
+    |Libraries|version|Description|
+    | :--- | :--- | :--- |
+    |`ESP32_Display_Panel`| `1.0.3+` |by Espressif, This is necessary to drive the screen.|
+    |`ESP32_IO_Expander`| `Arduino automatic selection` |The dependency library of `ESP32_Display_Panel` should be selected for installation together during the installation process.|
+    |`esp-lib-utils`| `Arduino automatic selection` |The dependency library of `ESP32_Display_Panel` should be selected for installation together during the installation process.|
+    |`lvgl`| `8.4.0` | A free and open-source embedded graphics library. |
+
+#### 3.2.2  ESP-IDF Setup
+1.  **Open platformio example**
+    * go to GitHub to download the program. You can download the main branch by clicking on the "<> Code" with green text
+    * Open the example using VS Code(ESP-IDF)
+2.  **Compile and upload**:
+    * Click `build` in the upper right corner to compile.
+    * connect the microcontroller to the computer.If the compilation is correct.
+    * Click `upload` in the upper right corner to download.
+
+#### 3.2.3 Arduino Setup ([Novice tutorial](https://github.com/VIEWESMART/VIEWE-Tutorial/blob/main/Arduino%20Tutorial/Arduino%20Getting%20Started%20Tutorial.md))
+1.  **Install[Arduino](https://www.arduino.cc/en/software)**
+    - Choose installation based on your system type.
+    - Newcomers please refer to the [beginner's tutorial](https://github.com/VIEWESMART/VIEWE-Tutorial/blob/main/Arduino%20Tutorial/Arduino%20Getting%20Started%20Tutorial.md).
+2.  **Install ESP32 Board Package**:
+    - Open Arduino IDE
+    - Go to `File` > `Preferences`
+    - Add to `Additional boards manager URLs`:
+    ```
+    https://espressif.github.io/arduino-esp32/package_esp32_index.json
+    ```
+    * Go to *Tools > Board > Boards Manager*.
+    * Search `esp32` by Espressif and install version **3.0.0+**.
+3.  **Install Libraries**:
+    * Go to *Sketch > Include Library > Library Manager*.
+    * Search `ESP32_Display_Panel` by Espressif and install version **1.0.3+**. You will be prompted whether to install its dependencies, please click **INSTALL ALL** to install all.
+    * Install `lvgl` (v8.4.0 recommended).
+4.  **Open example**:
+    * Navigate to `File` > `Examples` > `ESP32_Display_Panel`
+    * Select `Arduino` > `gui` > `lvgl_v8` > `simple_port`
+5.  **Select Board**:
+    * Target: `ESP32S3 Dev Module`.
+    * Settings:
+        * **Flash Size**: 16MB (128Mb)
+        * **Partition Scheme**: 16M Flash (3MB APP/9.9MB FATFS)
+        * **PSRAM**: **OPI PSRAM** (Crucial!)
+6.  **config esp supported panel board**:
+    * Open the `esp_panel_board_supported_conf.h` file in the example
+    * Enable this file: change the `ESP_PANEL_BOARD_DEFAULT_USE_SUPPORTED` macro definition to `1`
+    * ensure you uncomment: `#define BOARD_VIEWE_SMARTRING_PLUS_A` or `#define BOARD_VIEWE_SMARTRING_PLUS_B`
+    ```c
+    ...
+    /**
+    * @brief Flag to enable supported board configuration (0/1)
+    *
+    * Set to `1` to enable supported board configuration, `0` to disable
+    */
+    #define ESP_PANEL_BOARD_DEFAULT_USE_SUPPORTED       (1)
+    ...
+    // #define BOARD_VIEWE_SMARTRING
+    // #define BOARD_VIEWE_SMARTRING_PLUS_A
+    // #define BOARD_VIEWE_SMARTRING_PLUS_B
+    // #define BOARD_VIEWE_UEDX24240013_MD50E
+    // #define BOARD_VIEWE_UEDX24320024E_WB_A
+    // #define BOARD_VIEWE_UEDX24320028E_WB_A
+    // #define BOARD_VIEWE_UEDX24320035E_WB_A
+    // #define BOARD_VIEWE_UEDX32480035E_WB_A
+    // #define BOARD_VIEWE_UEDX46460015_MD50ET
+    // #define BOARD_VIEWE_UEDX48270043E_WB_A
+    // #define BOARD_VIEWE_UEDX48480021_MD80E_V2
+    // #define BOARD_VIEWE_UEDX48480021_MD80E
+    // #define BOARD_VIEWE_UEDX48480021_MD80ET
+    // #define BOARD_VIEWE_UEDX48480028_MD80ET
+    // #define BOARD_VIEWE_UEDX48480040E_WB_A
+    // #define BOARD_VIEWE_UEDX80480043E_WB_A
+    // #define BOARD_VIEWE_UEDX80480050E_AC_A
+    // #define BOARD_VIEWE_UEDX80480050E_WB_A
+    // #define BOARD_VIEWE_UEDX80480050E_WB_A_2
+    // #define BOARD_VIEWE_UEDX80480070E_WB_A
+    ...
+    ```
+7.  **Configure the example**:
+    - [Optional] Edit the macro definitions in the `lvgl_v8_port.h` file
+        - **If using `RGB/MIPI-DSI` interface**, change the `LVGL_PORT_AVOID_TEARING_MODE` macro definition to `1`/`2`/`3` to enable the avoid tearing function. After that, change the `LVGL_PORT_ROTATION_DEGREE` macro definition to the target rotation degree
+        - **If using other interfaces**, please don't modify the `LVGL_PORT_AVOID_TEARING_MODE` and `LVGL_PORT_ROTATION_DEGREE` macro definitions
+    - [Optional] Edit the macro definitions in the `lv_conf.h` file
+        - **If using `SPI/QSPI` interface**, change the `LV_COLOR_16_SWAP` macro definition to `1`.
+8.  **Select the correct port**:
+    * Connect to the device.
+    * Go to `Tools` > `Port`, Select the corresponding port.
+9.  **Compile and upload**:
+    * Click `√` in the upper right corner to compile.
+    * connect the microcontroller to the computer.If the compilation is correct.
+    * Click `→` in the upper right corner to download.
+
+
+> [!TIP]
+> **Configuration**: In `esp_panel_board_supported_conf.h`, ensure you uncomment:`#define BOARD_VIEWE_SMARTRING_PLUS_A` or `#define BOARD_VIEWE_SMARTRING_PLUS_B`
+> The selection of the enabled development board is based on the version.
+> Do not enable both `ESP_PANEL_BOARD_DEFAULT_USE_SUPPORTED` and `ESP_PANEL_BOARD_DEFAULT_USE_CUSTOM`
+> You cannot enable multiple esp supported panel boards at the same time.
+
+#### 3.2.4 PlatformIO Setup
+1.  **Open platformio example**
+    * go to GitHub to download the program. You can download the main branch by clicking on the "<> Code" with green text
+    * Open the example using VS Code(PlatformIO)
+2.  **Configure PlatformIO**:
+    * This example uses the `BOARD_ESPRESSIF_ESP32_S3_LCD_EV_BOARD_2_V1_5` board as default. Choose `BOARD_VIEWE_SMARTRING_PLUS_A` or `BOARD_VIEWE_SMARTRING_PLUS_B` in the `[platformio]:default_envs` of the `platformio.ini` file.
+3.  **Configure the example**:
+    - [Optional] Edit the macro definitions in the `lvgl_v8_port.h` file
+        - **If using `RGB/MIPI-DSI` interface**, change the `LVGL_PORT_AVOID_TEARING_MODE` macro definition to `1`/`2`/`3` to enable the avoid tearing function. After that, change the `LVGL_PORT_ROTATION_DEGREE` macro definition to the target rotation degree
+        - **If using other interfaces**, please don't modify the `LVGL_PORT_AVOID_TEARING_MODE` and `LVGL_PORT_ROTATION_DEGREE` macro definitions
+4.  **Compile and upload the project**
+    - Click the `√`(Compile) button
+    - Connect the board to your computer.If the compilation is correct.
+    - Click the `→`(upload) button
+---
 
 ## 6. Related Documents
 - [SmartRing-Plus Specification (PDF)](datasheet/SmartRing-Plus-SPEC-V1.1.pdf)
@@ -219,7 +323,7 @@ This tutorial guides users to set up the software development environment for Sm
 - [All Datasheets](/datasheet)
 
 ## 7. Dimension Drawing
-![SmartRing-Plus Dimension Drawing](image/SmartRing-Plus-Size.png)
+![SmartRing-Plus Dimension Drawing](images/size.png)
 - Outline dimension: φ57.6mm (circular)
 - Thickness: 12.2mm
 - Display active area: 45.68(H)×45.68(V) mm
