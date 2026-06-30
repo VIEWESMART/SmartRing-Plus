@@ -127,7 +127,7 @@ Supports QI protocol for wireless power supply
 
 | ESP Pin NO. | FUNCTION |
 |-------------|----------|
-| GPIO0       | BOOT/Power |
+| GPIO0       | BOOT |
 | GPIO1       | BAT_ADC |
 | GPIO2       | SDMMC_D1 |
 | GPIO3       | SDMMC_D0 |
@@ -135,8 +135,8 @@ Supports QI protocol for wireless power supply
 | GPIO5       | SDMMC_CMD |
 | GPIO6       | SDMMC_D3 |
 | GPIO7       | SDMMC_D2 |
-| GPIO8       | TP_SDA |
-| GPIO9       | TP_SCL |
+| GPIO8       | TP_SDA /I2C_SDA|
+| GPIO9       | TP_SCL /I2C_SCL|
 | GPIO10      | LCD_QSPI_SCL |
 | GPIO11      | LCD_QSPI_CS |
 | GPIO12      | LCD_QSPI_D0 |
@@ -151,13 +151,13 @@ Supports QI protocol for wireless power supply
 | GPIO21      | I2S_BCK |
 | GPIO38      | LCD_TE |
 | GPIO39      | LCD_RST |
-| GPIO40      | TP_SCL |
+| GPIO40      | TP_RST |
 | GPIO41      | TP_INT |
 | GPIO42      | IMU_INT1 |
 | GPIO43      | UART0_RX |
 | GPIO44      | UART0_TX |
-| GPIO45      | - |
-| GPIO46      | TP_BLK |
+| GPIO45      | PA_CTRL |
+| GPIO46      | LCD_BLK |
 | GPIO47      | PW_OFF |
 | GPIO48      | I2S_MCLK |
 
