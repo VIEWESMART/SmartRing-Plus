@@ -12,7 +12,6 @@ Do **not** open this `examples/` directory itself — the IDF extension would pi
 
 | Example | What it does |
 |---------|----------------|
-| [full-device](full-device) | Full product demo: clock, weather, recorder, music, IMU, album, settings |
 | [01_i2c_scan](01_i2c_scan) | Scan the shared I2C bus and list addresses |
 | [02_battery](02_battery) | Voltage, SoC, charging status |
 | [03_wifi](03_wifi) | STA connect (SSID/password via menuconfig) |
@@ -22,7 +21,7 @@ Do **not** open this `examples/` directory itself — the IDF extension would pi
 | [07_recorder](07_recorder) | Record 5 s WAV and play it back |
 | [08_album](08_album) | Slideshow from `/Photos` or `/DCIM` |
 | [09_imu](09_imu) | IMU spirit level + calibration |
-| [10_full-device](10_full-device) | SmartRing-Plus Complete machine example |
+| [10_full-device](10_full-device) | SmartRing-Plus Full product demo: clock, weather, recorder, music, IMU, album, settings |
 | [11_xiaozhi](11_xiaozhi) | AI Xiaozhi 2.0 Example |
 
 Suggested order: run `01`–`09` to learn one peripheral at a time, then flash [10_full-device](10_full-device) to see the complete UI.  
