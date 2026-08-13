@@ -12,7 +12,6 @@
 
 | 示例 | 说明 |
 |------|------|
-| [full-device](full-device) | 整机演示：时钟、天气、录音、音乐、IMU、相册、设置 |
 | [01_i2c_scan](01_i2c_scan) | 扫描共享 I2C 并列出设备地址 |
 | [02_battery](02_battery) | 显示电压、电量、充电状态 |
 | [03_wifi](03_wifi) | STA 连网（SSID/密码在 menuconfig） |
@@ -22,8 +21,10 @@
 | [07_recorder](07_recorder) | 录 5 秒 WAV 并回放 |
 | [08_album](08_album) | 轮播 `/Photos` 或 `/DCIM` 图片 |
 | [09_imu](09_imu) | IMU 水平仪 + 校准 |
+| [10_full-device](10_full-device) | SmartRing-Plus 整机演示：时钟、天气、录音、音乐、IMU、相册、设置 |
+| [11_xiaozhi](11_xiaozhi) | AI Xiaozhi 2.0 示例 |
 
-建议顺序：先跑 `01`～`09` 熟悉单个外设，再烧录 [full-device](full-device) 看完整界面。  
+建议顺序：先跑 `01`～`09` 熟悉单个外设，再烧录 [10_full-device](10_full-device) 看完整界面。  
 每个示例目录同时提供 `README.md`（英文）与 `README_CN.md`（中文）。
 
 ---
