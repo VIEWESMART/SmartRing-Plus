@@ -184,7 +184,7 @@ Examples are available in the [GitHub Repository](examples).
 | Framework | Example Path | Description |
 | :--- | :--- | :--- |
 | **Arduino** | `examples/arduino/gui/lvgl_v8` | **LVGL Benchmark**: Demonstrates 800x480 UI rendering. It can also be directly opened in the Arduino IDE. |
-| **esp-idf** | `examples/esp_idf/lvgl_port` | **lvgl port**: Example of porting and using lvgl in esp-idf |
+| **esp-idf** | `examples/esp_idf` | **lvgl port**: Example of porting and using lvgl in esp-idf |
 | **esp-idf** | `examples/esp_idf/sd_card_spi` | **sd_card**: Examples of using an SD card on a device |
 | **PlatformIO**| `examples/platformio/lvgl_v8_port` | **lvgl v8 port**: Usage example of lvgl v8. |
 
@@ -203,6 +203,32 @@ Examples are available in the [GitHub Repository](examples).
     |`lvgl`| `8.4.0` | A free and open-source embedded graphics library. |
 
 #### 3.2.2  ESP-IDF Setup
+
+Examples available for idf:
+| Example | Description |
+|------|------|
+| [01_i2c_scan](01_i2c_scan) | Scan shared I2C bus and list device addresses |
+| [02_battery](02_battery) | Display voltage, battery level and charging status |
+| [03_wifi](03_wifi) | STA network connection (SSID/password configured via menuconfig) |
+| [04_lvgl_port](04_lvgl_port) | LVGL porting, run official Widgets Demo |
+| [05_sd](05_sd) | Mount SD card, write and read back `hello.txt` |
+| [06_music](06_music) | Play MP3 files under `/Music` (previous track / pause / next track) |
+| [07_recorder](07_recorder) | Record 5-second WAV audio and playback |
+| [08_album](08_album) | Slideshow of images in `/Photos` or `/DCIM` |
+| [09_imu](09_imu) | IMU level gauge and calibration |
+| [10_full-device](10_full-device) | SmartRing-Plus full device demo: clock, weather, audio recording, music, IMU, photo album, settings |
+| [11_xiaozhi](11_xiaozhi) | AI Xiaozhi 2.0 example |
+
+All these directories are **sibling folders** under `examples/esp-idf`.
+
+Please **open one of the subdirectories** using VS Code / Cursor (where you can see the project's own `CMakeLists.txt`).
+**Do not** open the root `examples/` directory itself, otherwise the IDF extension will fail to recognize the project correctly.
+
+Recommended sequence: Run examples `01` to `09` first to get familiar with individual peripherals, then flash [10_full-device](10_full-device) to view the complete interface.
+
+Each example directory contains both `README.md` (English) and `README_CN.md` (Chinese). Follow the instructions after opening the project.
+
+The general process is as follows:
 1.  **Open platformio example**
     * go to GitHub to download the program. You can download the main branch by clicking on the "<> Code" with green text
     * Open the example using VS Code(ESP-IDF)
