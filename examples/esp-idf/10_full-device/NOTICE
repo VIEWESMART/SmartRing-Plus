@@ -1,0 +1,8 @@
+smartring_plus_full_device
+Copyright 2024-2026 Ayang / SHENZHEN VIEWE TECHNOLOGY CO.,LTD
+
+This product includes software developed for the Viewe SmartRing-Plus
+(ESP32-S3) platform. See LICENSE for the Apache-2.0 terms.
+
+Third-party components under managed_components/ retain their own licenses
+(LVGL, Espressif managed components, etc.).

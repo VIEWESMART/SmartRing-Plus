@@ -1,0 +1,15 @@
+menu "Example Configuration"
+
+    config EXAMPLE_WIFI_SSID
+        string "WiFi SSID"
+        default "myssid"
+        help
+            Target AP SSID. Change via idf.py menuconfig.
+
+    config EXAMPLE_WIFI_PASSWORD
+        string "WiFi Password"
+        default "mypassword"
+        help
+            Target AP password. Empty for open networks.
+
+endmenu

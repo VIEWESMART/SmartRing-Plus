@@ -1,0 +1,18 @@
+{
+  "idf.customExtraVars": {
+    "IDF_TARGET": "esp32s3"
+  },
+  "idf.openOcdConfigs": [
+    "board/esp32s3-builtin.cfg"
+  ],
+  "files.associations": {
+    "*.h": "c",
+    "*.c": "c"
+  },
+  "C_Cpp.intelliSenseEngine": "disabled",
+  "clangd.arguments": [
+    "--background-index",
+    "--query-driver=**",
+    "--compile-commands-dir=${workspaceFolder}/build"
+  ]
+}

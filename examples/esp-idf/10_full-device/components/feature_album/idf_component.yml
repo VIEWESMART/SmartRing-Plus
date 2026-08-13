@@ -1,0 +1,2 @@
+dependencies:
+  espressif/esp_lv_decoder: "^0.4.3"

@@ -1,0 +1,17 @@
+{
+  "idf.currentSetup": "D:\\idf\\.espressif\\v5.5.4\\esp-idf",
+  "idf.customExtraVars": {
+    "IDF_TARGET": "esp32s3"
+  },
+  "idf.openOcdConfigs": [
+    "board/esp32s3-builtin.cfg"
+  ],
+  "clangd.path": "C:\\Espressif\\tools\\esp-clang\\esp-19.1.2_20250312\\esp-clang\\bin\\clangd.exe",
+  "clangd.arguments": [
+    "--background-index",
+    "--query-driver=**",
+    "--compile-commands-dir=e:\\esp_examples\\smartring-plus-sample-master\\full-device\\examples\\07_recorder\\build"
+],
+"idf.flashType": "UART",
+"idf.portWin": "COM44"
+}

@@ -1,0 +1,3 @@
+## smartring_plus_full_device — pull BSP from Espressif Component Registry
+dependencies:
+  viewesmart/smartring_plus: "^1.1.1"

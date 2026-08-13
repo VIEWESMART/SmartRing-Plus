@@ -1,0 +1,3 @@
+## SmartRing-Plus example — BSP from Espressif Component Registry
+dependencies:
+  viewesmart/smartring_plus: "^1.1.1"
