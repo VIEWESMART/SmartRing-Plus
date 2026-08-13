@@ -171,7 +171,7 @@ SmartRing-Plus系列包含两个版本，除屏幕型号及对应初始化参数
 | 开发框架 | 示例工程路径 | 功能说明 |
 | :--- | :--- | :--- |
 | **Arduino** | `examples/arduino/gui/lvgl_v8` | **LVGL性能测试**：演示360×360分辨率界面渲染，可直接在Arduino IDE中打开 |
-| **esp-idf** | `examples/esp_idf/lvgl_port` | **LVGL移植**：ESP-IDF框架下LVGL图形库的移植与使用示例 |
+| **esp-idf** | `examples/esp_idf` | **LVGL移植**：ESP-IDF框架下使用示例 |
 | **esp-idf** | `examples/esp_idf/sd_card_spi` | **SD卡使用**：设备端TF卡的操作示例 |
 | **PlatformIO**| `examples/platformio/lvgl_v8_port` | **LVGL v8移植**：PlatformIO框架下LVGL v8的使用示例 |
 
@@ -189,6 +189,31 @@ SmartRing-Plus系列包含两个版本，除屏幕型号及对应初始化参数
 |`lvgl`| `8.4.0` | 开源嵌入式图形库 |
 
 #### 3.2.2  ESP-IDF 环境搭建
+ 
+idf有如下示例：
+| 示例 | 说明 |
+|------|------|
+| [01_i2c_scan](01_i2c_scan) | 扫描共享 I2C 并列出设备地址 |
+| [02_battery](02_battery) | 显示电压、电量、充电状态 |
+| [03_wifi](03_wifi) | STA 连网（SSID/密码在 menuconfig） |
+| [04_lvgl_port](04_lvgl_port) | LVGL 移植，运行官方 Widgets Demo |
+| [05_sd](05_sd) | 挂载 SD，写入并读回 `hello.txt` |
+| [06_music](06_music) | 播放 `/Music` 下 MP3（上一曲/暂停/下一曲） |
+| [07_recorder](07_recorder) | 录 5 秒 WAV 并回放 |
+| [08_album](08_album) | 轮播 `/Photos` 或 `/DCIM` 图片 |
+| [09_imu](09_imu) | IMU 水平仪 + 校准 |
+| [10_full-device](10_full-device) | SmartRing-Plus 整机演示：时钟、天气、录音、音乐、IMU、相册、设置 |
+| [11_xiaozhi](11_xiaozhi) | AI Xiaozhi 2.0 示例 |
+
+这些目录都是 `examples/esp-idf` 下的**同级文件夹**。  
+请用 VS Code / Cursor **打开某一个子目录**（能看到该工程自己的 `CMakeLists.txt`），  
+**不要**打开本 `examples/` 目录本身，否则 IDF 扩展会认错工程。
+
+建议顺序：先跑 `01`～`09` 熟悉单个外设，再烧录 [10_full-device](10_full-device) 看完整界面。  
+每个示例目录同时提供 `README.md`（英文）与 `README_CN.md`（中文），打开工程后根据步骤操作即可。
+
+大概流程如下：
+
 1.  **打开示例工程**
     * 前往GitHub下载工程代码，点击绿色的`<> Code`按钮下载主分支
     * 使用搭载ESP-IDF插件的VS Code打开示例工程
