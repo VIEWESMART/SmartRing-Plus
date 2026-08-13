@@ -22,8 +22,10 @@ Do **not** open this `examples/` directory itself — the IDF extension would pi
 | [07_recorder](07_recorder) | Record 5 s WAV and play it back |
 | [08_album](08_album) | Slideshow from `/Photos` or `/DCIM` |
 | [09_imu](09_imu) | IMU spirit level + calibration |
+| [10_full-device](10_full-device) | SmartRing-Plus Complete machine example |
+| [11_xiaozhi](11_xiaozhi) | AI Xiaozhi 2.0 Example |
 
-Suggested order: run `01`–`09` to learn one peripheral at a time, then flash [full-device](full-device) to see the complete UI.  
+Suggested order: run `01`–`09` to learn one peripheral at a time, then flash [10_full-device](10_full-device) to see the complete UI.  
 Each example has `README.md` (English) and `README_CN.md` (Chinese).
 
 ---
