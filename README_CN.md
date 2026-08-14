@@ -286,7 +286,7 @@ idf有如下示例：
 ---
 
 ## 六、相关文档
-- [SmartRing-Plus 产品规格书(PDF)](datasheet/SmartRing-Plus-SPEC-V1.1.pdf)
+- [SmartRing-Plus 产品规格书(PDF)](datasheet/SmartRing%20Plus%20V2.0%20SPEC%20English.pdf)
 - [ESP32-S3-N16R8 芯片规格书(英文)](datasheet/chip/datasheet_en.pdf)
 - [ESP32-S3-N16R8 芯片规格书(中文)](datasheet/chip/datasheet_cn.pdf)
 - [显示屏规格书(SmartRing-Plus-A)](datasheet/display/SmartRing-Plus-A%20Display%20Specification.pdf)
