@@ -306,7 +306,7 @@ The general process is as follows:
 ---
 
 ## 6. Related Documents
-- [SmartRing-Plus Specification (PDF)](datasheet/SmartRing-Plus-SPEC-V1.1.pdf)
+- [SmartRing-Plus Specification (PDF)](datasheet/SmartRing%20Plus%20V2.0%20SPEC%20English.pdf)
 - [ESP32-S3-N16R8 Datasheet (English)](datasheet/chip/datasheet_en.pdf)
 - [ESP32-S3-N16R8 Datasheet (Chinese)](datasheet/chip/datasheet_cn.pdf)
 - [Display Specification (SmartRing-Plus-A)](datasheet/display/SmartRing-Plus-A%20Display%20Specification.pdf)
