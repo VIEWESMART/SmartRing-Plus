@@ -177,24 +177,24 @@ Examples are available in the [GitHub Repository](examples).
 Examples available for idf:
 | Example | Description |
 |------|------|
-| [01_i2c_scan](examples/esp_idf/01_i2c_scan) | Scan shared I2C bus and list device addresses |
-| [02_battery](examples/esp_idf/02_battery) | Display voltage, battery level and charging status |
-| [03_wifi](examples/esp_idf/03_wifi) | STA network connection (SSID/password configured via menuconfig) |
-| [04_lvgl_port](examples/esp_idf/04_lvgl_port) | LVGL porting, run official Widgets Demo |
-| [05_sd](examples/esp_idf/05_sd) | Mount SD card, write and read back `hello.txt` |
-| [06_music](examples/esp_idf/06_music) | Play MP3 files under `/Music` (previous track / pause / next track) |
-| [07_recorder](examples/esp_idf/07_recorder) | Record 5-second WAV audio and playback |
-| [08_album](examples/esp_idf/08_album) | Slideshow of images in `/Photos` or `/DCIM` |
-| [09_imu](examples/esp_idf/09_imu) | IMU level gauge and calibration |
-| [10_full-device](examples/esp_idf/10_full-device) | SmartRing-Plus full device demo: clock, weather, audio recording, music, IMU, photo album, settings |
-| [11_xiaozhi](examples/esp_idf/11_xiaozhi) | AI Xiaozhi 2.0 example |
+| [01_i2c_scan](examples/esp-idf/01_i2c_scan) | Scan shared I2C bus and list device addresses |
+| [02_battery](examples/esp-idf/02_battery) | Display voltage, battery level and charging status |
+| [03_wifi](examples/esp-idf/03_wifi) | STA network connection (SSID/password configured via menuconfig) |
+| [04_lvgl_port](examples/esp-idf/04_lvgl_port) | LVGL porting, run official Widgets Demo |
+| [05_sd](examples/esp-idf/05_sd) | Mount SD card, write and read back `hello.txt` |
+| [06_music](examples/esp-idf/06_music) | Play MP3 files under `/Music` (previous track / pause / next track) |
+| [07_recorder](examples/esp-idf/07_recorder) | Record 5-second WAV audio and playback |
+| [08_album](examples/esp-idf/08_album) | Slideshow of images in `/Photos` or `/DCIM` |
+| [09_imu](examples/esp-idf/09_imu) | IMU level gauge and calibration |
+| [10_full-device](examples/esp-idf/10_full-device) | SmartRing-Plus full device demo: clock, weather, audio recording, music, IMU, photo album, settings |
+| [11_xiaozhi](examples/esp-idf/11_xiaozhi) | AI Xiaozhi 2.0 example |
 
 All these directories are **sibling folders** under `examples/esp-idf`.
 
 Please **open one of the subdirectories** using VS Code / Cursor (where you can see the project's own `CMakeLists.txt`).
 **Do not** open the root `examples/` directory itself, otherwise the IDF extension will fail to recognize the project correctly.
 
-Recommended sequence: Run examples `01` to `09` first to get familiar with individual peripherals, then flash [10_full-device](examples/esp_idf/10_full-device) to view the complete interface.
+Recommended sequence: Run examples `01` to `09` first to get familiar with individual peripherals, then flash [10_full-device](examples/esp-idf/10_full-device) to view the complete interface.
 
 Each example directory contains both `README.md` (English) and `README_CN.md` (Chinese). Follow the instructions after opening the project.
 
