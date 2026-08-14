@@ -128,7 +128,7 @@ Supports QI protocol for wireless power supply
 ![gpio](images/GPIO.png)
 
 ### 2.3 Version Difference
-The SmartRing-Plus series includes two versions with consistent hardware specifications except for screen models and initialization parameters:
+The SmartRing-Plus series includes three versions, with the differences as follows:
 
 | Product Version | Matching Screen Model | Core Difference |
 |-----------------|-----------------------|-----------------|
