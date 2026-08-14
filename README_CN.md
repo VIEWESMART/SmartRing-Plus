@@ -113,54 +113,25 @@ IPS屏（360×360分辨率），搭配CST816S电容触摸芯片
 支持QI协议，实现无线供电
 
 ### 2.2 GPIO引脚定义
-| ESP引脚号 | 功能说明 |
-|-----------|----------|
-| GPIO0       | BOOT |
-| GPIO1       | BAT_ADC |
-| GPIO2       | SDMMC_D1 |
-| GPIO3       | SDMMC_D0 |
-| GPIO4       | SDMMC_SCK |
-| GPIO5       | SDMMC_CMD |
-| GPIO6       | SDMMC_D3 |
-| GPIO7       | SDMMC_D2 |
-| GPIO8       | TP_SDA /I2C_SDA|
-| GPIO9       | TP_SCL /I2C_SCL|
-| GPIO10      | LCD_QSPI_SCL |
-| GPIO11      | LCD_QSPI_CS |
-| GPIO12      | LCD_QSPI_D0 |
-| GPIO13      | LCD_QSPI_D1 |
-| GPIO14      | LCD_QSPI_D3 |
-| GPIO15      | LCD_QSPI_D2 |
-| GPIO16      | I2S_DO |
-| GPIO17      | I2S_WS |
-| GPIO18      | I2S_DI |
-| GPIO19      | USB_N |
-| GPIO20      | USB_P |
-| GPIO21      | I2S_BCK |
-| GPIO38      | LCD_TE |
-| GPIO39      | LCD_RST |
-| GPIO40      | TP_RST |
-| GPIO41      | TP_INT |
-| GPIO42      | IMU_INT1 |
-| GPIO43      | UART0_RX |
-| GPIO44      | UART0_TX |
-| GPIO45      | PA_CTRL |
-| GPIO46      | LCD_BLK |
-| GPIO47      | PW_OFF |
-| GPIO48      | I2S_MCLK |
+
+![gpio](images/GPIO.png)
 
 ### 2.3 版本差异
-SmartRing-Plus系列包含两个版本，除屏幕型号及对应初始化参数外，其余硬件规格完全一致：
+SmartRing-Plus系列包含三个版本，差异如下：
 
 | 产品版本 | 适配屏幕型号 | 核心差异 |
 |-----------------|-----------------------|----------|
 | SmartRing-Plus-A | VIEWE UE018HV-RB39-A002A | 屏幕型号及对应的初始化参数 |
 | SmartRing-Plus-B | VIEWE UE018HV-RB39-A004A | 屏幕型号及对应的初始化参数 |
+| SmartRing-Plus-B | VIEWE UE018HV-RB39-A004A | 电源管理芯片由ETA6002E8A更换为AXP2101 |
 
 **版本识别方法**：
-1. 产品包装：外包装明确标注版本型号（A/B）
+1. 产品包装：外包装明确标注版本型号（A/B/B V2）
 2. 固件后缀：版本A固件后缀为_A，版本B固件后缀为_B
 3. 示例代码：二次开发配套分版本专属示例代码
+
+> [!Note]
+> B版本V2与B版本不作区分
 
 ## 三、软件支持
 本产品全面支持**Arduino**、**PlatformIO**、**ESP-IDF** 开发框架，已完成**LVGL**图形库的移植并提供配套示例工程。
@@ -193,23 +164,23 @@ SmartRing-Plus系列包含两个版本，除屏幕型号及对应初始化参数
 idf有如下示例：
 | 示例 | 说明 |
 |------|------|
-| [01_i2c_scan](01_i2c_scan) | 扫描共享 I2C 并列出设备地址 |
-| [02_battery](02_battery) | 显示电压、电量、充电状态 |
-| [03_wifi](03_wifi) | STA 连网（SSID/密码在 menuconfig） |
-| [04_lvgl_port](04_lvgl_port) | LVGL 移植，运行官方 Widgets Demo |
-| [05_sd](05_sd) | 挂载 SD，写入并读回 `hello.txt` |
-| [06_music](06_music) | 播放 `/Music` 下 MP3（上一曲/暂停/下一曲） |
-| [07_recorder](07_recorder) | 录 5 秒 WAV 并回放 |
-| [08_album](08_album) | 轮播 `/Photos` 或 `/DCIM` 图片 |
-| [09_imu](09_imu) | IMU 水平仪 + 校准 |
-| [10_full-device](10_full-device) | SmartRing-Plus 整机演示：时钟、天气、录音、音乐、IMU、相册、设置 |
-| [11_xiaozhi](11_xiaozhi) | AI Xiaozhi 2.0 示例 |
+| [01_i2c_scan](examples/esp-idf/01_i2c_scan) | 扫描共享 I2C 并列出设备地址 |
+| [02_battery](examples/esp-idf/02_battery) | 显示电压、电量、充电状态 |
+| [03_wifi](examples/esp-idf/03_wifi) | STA 连网（SSID/密码在 menuconfig） |
+| [04_lvgl_port](examples/esp-idf/04_lvgl_port) | LVGL 移植，运行官方 Widgets Demo |
+| [05_sd](examples/esp-idf/05_sd) | 挂载 SD，写入并读回 `hello.txt` |
+| [06_music](examples/esp-idf/06_music) | 播放 `/Music` 下 MP3（上一曲/暂停/下一曲） |
+| [07_recorder](examples/esp-idf/07_recorder) | 录 5 秒 WAV 并回放 |
+| [08_album](examples/esp-idf/08_album) | 轮播 `/Photos` 或 `/DCIM` 图片 |
+| [09_imu](examples/esp-idf/09_imu) | IMU 水平仪 + 校准 |
+| [10_full-device](examples/esp-idf/10_full-device) | SmartRing-Plus 整机演示：时钟、天气、录音、音乐、IMU、相册、设置 |
+| [11_xiaozhi](examples/esp-idf/11_xiaozhi) | AI Xiaozhi 2.0 示例 |
 
 这些目录都是 `examples/esp-idf` 下的**同级文件夹**。  
 请用 VS Code / Cursor **打开某一个子目录**（能看到该工程自己的 `CMakeLists.txt`），  
 **不要**打开本 `examples/` 目录本身，否则 IDF 扩展会认错工程。
 
-建议顺序：先跑 `01`～`09` 熟悉单个外设，再烧录 [10_full-device](10_full-device) 看完整界面。  
+建议顺序：先跑 `01`～`09` 熟悉单个外设，再烧录 [10_full-device](examples/esp-idf/10_full-device) 看完整界面。  
 每个示例目录同时提供 `README.md`（英文）与 `README_CN.md`（中文），打开工程后根据步骤操作即可。
 
 大概流程如下：
