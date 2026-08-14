@@ -125,41 +125,7 @@ Supports QI protocol for wireless power supply
 
 ### 2.2 GPIO Definition
 
-| ESP Pin NO. | FUNCTION |
-|-------------|----------|
-| GPIO0       | BOOT |
-| GPIO1       | BAT_ADC |
-| GPIO2       | SDMMC_D1 |
-| GPIO3       | SDMMC_D0 |
-| GPIO4       | SDMMC_SCK |
-| GPIO5       | SDMMC_CMD |
-| GPIO6       | SDMMC_D3 |
-| GPIO7       | SDMMC_D2 |
-| GPIO8       | TP_SDA /I2C_SDA|
-| GPIO9       | TP_SCL /I2C_SCL|
-| GPIO10      | LCD_QSPI_SCL |
-| GPIO11      | LCD_QSPI_CS |
-| GPIO12      | LCD_QSPI_D0 |
-| GPIO13      | LCD_QSPI_D1 |
-| GPIO14      | LCD_QSPI_D3 |
-| GPIO15      | LCD_QSPI_D2 |
-| GPIO16      | I2S_DO |
-| GPIO17      | I2S_WS |
-| GPIO18      | I2S_DI |
-| GPIO19      | USB_N |
-| GPIO20      | USB_P |
-| GPIO21      | I2S_BCK |
-| GPIO38      | LCD_TE |
-| GPIO39      | LCD_RST |
-| GPIO40      | TP_RST |
-| GPIO41      | TP_INT |
-| GPIO42      | IMU_INT1 |
-| GPIO43      | UART0_RX |
-| GPIO44      | UART0_TX |
-| GPIO45      | PA_CTRL |
-| GPIO46      | LCD_BLK |
-| GPIO47      | PW_OFF |
-| GPIO48      | I2S_MCLK |
+[!gpio](images/GPIO.png)
 
 ### 2.3 Version Difference
 The SmartRing-Plus series includes two versions with consistent hardware specifications except for screen models and initialization parameters:
@@ -168,11 +134,15 @@ The SmartRing-Plus series includes two versions with consistent hardware specifi
 |-----------------|-----------------------|-----------------|
 | SmartRing-Plus-A | VIEWE UE018HV-RB39-A002A | Screen model and corresponding initialization parameters |
 | SmartRing-Plus-B | VIEWE UE018HV-RB39-A004A | Screen model and corresponding initialization parameters |
+| SmartRing-Plus-B V2 | VIEWE UE018HV-RB39-A004A | The power management chip is changed from ETA6002E8A to AXP2101 |
 
 **Version Identification Methods**:
-1. Product packaging: Clearly marked with version model (A/B)
+1. Product packaging: Clearly marked with version model (A/B/B V2)
 2. Firmware suffix: _A for version A, _B for version B
 3. Sample code: Version-specific codes provided for secondary development
+
+> [!Note]
+> No distinction shall be made between Version B V2 and B
 
 ## 3. Software
 
@@ -207,24 +177,24 @@ Examples are available in the [GitHub Repository](examples).
 Examples available for idf:
 | Example | Description |
 |------|------|
-| [01_i2c_scan](01_i2c_scan) | Scan shared I2C bus and list device addresses |
-| [02_battery](02_battery) | Display voltage, battery level and charging status |
-| [03_wifi](03_wifi) | STA network connection (SSID/password configured via menuconfig) |
-| [04_lvgl_port](04_lvgl_port) | LVGL porting, run official Widgets Demo |
-| [05_sd](05_sd) | Mount SD card, write and read back `hello.txt` |
-| [06_music](06_music) | Play MP3 files under `/Music` (previous track / pause / next track) |
-| [07_recorder](07_recorder) | Record 5-second WAV audio and playback |
-| [08_album](08_album) | Slideshow of images in `/Photos` or `/DCIM` |
-| [09_imu](09_imu) | IMU level gauge and calibration |
-| [10_full-device](10_full-device) | SmartRing-Plus full device demo: clock, weather, audio recording, music, IMU, photo album, settings |
-| [11_xiaozhi](11_xiaozhi) | AI Xiaozhi 2.0 example |
+| [01_i2c_scan](examples/esp-idf/01_i2c_scan) | Scan shared I2C bus and list device addresses |
+| [02_battery](examples/esp-idf/02_battery) | Display voltage, battery level and charging status |
+| [03_wifi](examples/esp-idf/03_wifi) | STA network connection (SSID/password configured via menuconfig) |
+| [04_lvgl_port](examples/esp-idf/04_lvgl_port) | LVGL porting, run official Widgets Demo |
+| [05_sd](examples/esp-idf/05_sd) | Mount SD card, write and read back `hello.txt` |
+| [06_music](examples/esp-idf/06_music) | Play MP3 files under `/Music` (previous track / pause / next track) |
+| [07_recorder](examples/esp-idf/07_recorder) | Record 5-second WAV audio and playback |
+| [08_album](examples/esp-idf/08_album) | Slideshow of images in `/Photos` or `/DCIM` |
+| [09_imu](examples/esp-idf/09_imu) | IMU level gauge and calibration |
+| [10_full-device](examples/esp-idf/10_full-device) | SmartRing-Plus full device demo: clock, weather, audio recording, music, IMU, photo album, settings |
+| [11_xiaozhi](examples/esp-idf/11_xiaozhi) | AI Xiaozhi 2.0 example |
 
 All these directories are **sibling folders** under `examples/esp-idf`.
 
 Please **open one of the subdirectories** using VS Code / Cursor (where you can see the project's own `CMakeLists.txt`).
 **Do not** open the root `examples/` directory itself, otherwise the IDF extension will fail to recognize the project correctly.
 
-Recommended sequence: Run examples `01` to `09` first to get familiar with individual peripherals, then flash [10_full-device](10_full-device) to view the complete interface.
+Recommended sequence: Run examples `01` to `09` first to get familiar with individual peripherals, then flash [10_full-device](examples/esp-idf/10_full-device) to view the complete interface.
 
 Each example directory contains both `README.md` (English) and `README_CN.md` (Chinese). Follow the instructions after opening the project.
 
